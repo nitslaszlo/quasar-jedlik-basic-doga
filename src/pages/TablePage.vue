@@ -42,17 +42,38 @@ function deleteDocument(): void {
   store.many.document = { id: store.app.selectedMany[0].id };
   store.many_DeleteById();
   // selected.value = [];
-  store.app.selectedMany= [];
+  store.app.selectedMany = [];
 }
 
 function editDocument() {
   store.many.document.id = store.app.selectedMany[0].id;
   store.app.showEditDialog = true;
 }
+
+function filterUpdate() {
+  if (!store.app.filter) {
+    store.app.filter = "";
+  }
+  if (store.app.filter.length > 0) {
+    store.many_Filter();
+  } else {
+    store.many_GetAll();
+  }
+}
 </script>
 
 <template>
   <q-page>
+    <q-input
+      v-model="store.app.filter"
+      clearable
+      dense
+      filled
+      label="Filter"
+      style="width: 400px; margin: auto;"
+      type="text"
+      @update:model-value="filterUpdate()"
+    />
     <q-table
       v-model:selected="store.app.selectedMany"
       :columns="columns"
