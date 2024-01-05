@@ -79,7 +79,7 @@ function filterUpdate() {
       :columns="columns"
       :rows="store.many.documents"
       selection="multiple"
-      title="Hahu hírdetések"
+      title="Hahu hirdetések"
       wrap-cells
     >
       <!-- Slot-ok: -->
@@ -102,7 +102,7 @@ function filterUpdate() {
 
     <!-- Buttons: -->
     <div class="row justify-center q-mt-sm q-gutter-md">
-      <q-btn color="green" label="Új hírdetés" no-caps @click="store.app.showNewDialog = true" />
+      <q-btn color="green" label="Új hirdetés" no-caps @click="store.app.showNewDialog = true" />
       <q-btn
         v-show="store.app.selectedMany.length == 1"
         color="red"

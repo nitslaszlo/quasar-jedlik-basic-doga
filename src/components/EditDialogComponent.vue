@@ -44,12 +44,12 @@ function Reset() {
     <q-card class="q-pa-md q-gutter-md" style="width: 60vw; min-width: 300px">
       <q-form @reset="Reset()" @submit="Submit()">
         <div class="q-gutter-md">
-          <h5 class="text-center">Új hírdetés hozzáadása</h5>
+          <h5 class="text-center">Hirdetés szerkesztése</h5>
           <q-input
             v-model="store.many.document.titleField"
             filled
             label="Cím"
-            :rules="[(v) => (v != null && v != '') || 'A hírdetés címe nem lehet üres!']"
+            :rules="[(v) => (v != null && v != '') || 'A hirdetés címe nem lehet üres!']"
             type="text"
           />
           <q-select

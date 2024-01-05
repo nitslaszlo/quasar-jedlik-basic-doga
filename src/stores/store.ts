@@ -20,7 +20,7 @@ export interface IApp {
   }
 }
 
-interface IOne {
+export interface IOne {
   id?: number;
   categoryNameField?: string;
 }
