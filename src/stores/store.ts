@@ -34,10 +34,7 @@ export interface IMany {
   boolField?: boolean;
   priceField?: number;
   imgField?: string;
-  category?: {
-    id?: number;
-    categoryNameField?: string;
-  };
+  category?: IOne;
 }
 
 export interface IOther {
